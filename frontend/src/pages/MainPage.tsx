@@ -1,39 +1,59 @@
-import { useState } from "react";
-import reactLogo from "@/assets/react.svg";
-import viteLogo from "/vite.svg";
+import { Container, Row, Col, Dropdown, Form } from 'react-bootstrap';
+import Navbar from '@/components/navbar'
 import '@/styles/MainPage.css'
 
-function App() {
-  const [count, setCount] = useState(0);
-
+function MainPage() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img
-            src={reactLogo}
-            className="logo react"
-            alt="React logo"
-          />
-        </a>
+    <Container fluid className="p-3">
+      <div className="fixed-top d-flex justify-content-end align-items-center p-2">
+        <label className="me-2">정렬</label>
+        <select className="form-select w-auto" defaultValue="선호순">
+          <option value="선호순">선호순</option>
+          <option value="유통기한순">유통기한순</option>
+        </select>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+      <Container fluid className="mb-5">
+        <Row className="gx-2 gy-3 p-2">
+          <Col xs={4}>
+            <div className="item-box">
+              <span className="emoji">🥝</span>
+              <span className="  badge rounded-pill bg-danger item-badge">1</span>
+            </div>
+          </Col>
+          <Col xs={4}>
+            <div className="item-box">
+              <span className="emoji">🍎</span>
+              <span className="dday-badge">D-4</span>
+              <span className= " badge rounded-pill bg-danger item-badge">1</span>
+            </div>
+          </Col>
+          <Col xs={4}>
+            <div className="item-box">
+              <span className="emoji">🍎</span>
+              <span className="dday-badge">D-7</span>
+              <span className= " badge rounded-pill bg-danger item-badge">2</span>
+            </div>
+          </Col>
+
+          <Col xs={4}>
+            <div className="item-box">
+              <span className="emoji">🥦</span>
+              <span className= " badge rounded-pill bg-danger item-badge">3</span>
+            </div>
+          </Col>
+
+          <Col xs={4}>
+            <div className="empty-box" />
+          </Col>
+          <Col xs={4}>
+            <div className="empty-box" />
+          </Col>
+        </Row>
+      </Container>
+      <Navbar />
+    </Container>
   );
 }
 
-export default App;
+export default MainPage;

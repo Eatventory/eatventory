@@ -1,27 +1,57 @@
-.logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-}
-.logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
+.item-box {
+    position: relative;
+    background-color: #fff;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@keyframes logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.emoji {
+    font-size: 48px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
-        animation: logo-spin infinite 20s linear;
-    }
+.item-badge {
+    position: absolute;
+    bottom: 4px;
+    right: 6px;
+    color: white;
+}
+
+.dday-badge {
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 11px;
+    padding: 1px 6px;
+}
+
+.empty-box {
+    height: 100px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    border: 1px dashed #ccc;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+}
+
+.nav-item {
+    text-align: center;
+    font-size: 12px;
+    padding: 4px;
+}
+
+.nav-item.active div {
+    font-weight: bold;
 }
