@@ -4,6 +4,7 @@ import ProtectedLayout from "@/router/ProtectedLayout";
 
 import MainPage from "@/pages/MainPage";
 import Login from "@/pages/Login";
+import Wishlist from "@/pages/Wishlist";
 import NotFound from "@/pages/NotFound";
 
 function BrowserRoutes() {
@@ -13,6 +14,7 @@ function BrowserRoutes() {
 
       <Route element={<ProtectedLayout />}>
         <Route path="/" element={<MainPage />} />
+        <Route path="/wishlist" element={<Wishlist />} />
       </Route>
 
       <Route path="*" element={<NotFound />} />
