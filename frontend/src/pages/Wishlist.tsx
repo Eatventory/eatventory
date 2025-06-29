@@ -35,49 +35,60 @@ const recipeList: RecipeItem[] = [
 const WishList: React.FC = () => {
   return (
     <>
-    <div className="p-4 bg-light min-vh-100">
+    <div>
       <h1 className="fw-bold text-center mb-5">Wish List</h1>
 
       {recipeList.map((item) => (
         <Card
-          key={item.id}
-          className="mb-4 rounded-4 shadow-sm bg-secondary-subtle border-0"
-        >
-          <Card.Body className="d-flex align-items-center">
-            <img
-              src={item.imageUrl}
-              alt={item.title}
-              className="rounded-circle me-3"
-              style={{
-                width: "70px",
-                height: "70px",
-                objectFit: "cover",
-              }}
-            />
+        key={item.id}
+        className="mb-4 rounded-4 shadow-sm bg-secondary-subtle border-0"
+      >
+        <Card.Body className="d-flex align-items-start gap-3">
+          <img
+            src={item.imageUrl || '/images/default.jpg'}
+            alt=""
+            className="rounded-circle bg-light"
+            style={{
+              width: '70px',
+              height: '70px',
+              objectFit: 'cover',
+              flexShrink: 0,
+            }}
+          />
 
-            <div className="flex-grow-1">
-              <h5 className="fw-semibold mb-1">{item.title}</h5>
-              <p className="text-muted small mb-0">
-                {item.ingredients}
-              </p>
+          <div
+            className="flex-grow-1 d-flex flex-column justify-content-between"
+            style={{ minHeight: '90px', position: 'relative' }}
+          >
+            <div className="d-flex justify-content-between align-items-start">
+              <div className="fw-semibold" style={{ fontSize: '1rem' }}>
+                {item.title}
+              </div>
+              <button
+                className="btn text-danger p-0"
+                style={{ fontSize: '1.3rem', lineHeight: 1 }}
+                aria-label="삭제"
+              >
+                🚫
+              </button>
             </div>
 
-            <div className="d-flex flex-column align-items-center ms-3">
-              <button className="btn btn-sm p-1 mb-2 bg-transparent border-0 text-danger fs-4">
-                <span role="img" aria-label="remove">
-                  🚫
-                </span>
-              </button>
+            <div className="text-muted small" style={{ lineHeight: '1.4' }}>
+              {item.ingredients}
+            </div>
+
+            <div className="text-end mt-2">
               <Button
                 variant="dark"
                 size="sm"
-                className="rounded-pill"
+                className="rounded-pill px-3 py-1"
               >
                 해먹기
               </Button>
             </div>
-          </Card.Body>
-        </Card>
+          </div>
+        </Card.Body>
+      </Card>
       ))}
     </div>
     <Navbar />

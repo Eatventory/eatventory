@@ -31,7 +31,7 @@ function Navbar() {
         </div>
       </div>
       <div className="text-center text-reset">
-        <Link to="/recipesearch">
+        <Link to="/searchrecipe">
           <img src={iconRecipeSearch} style={{ width: "48px" }} />
         </Link>
         <div>

@@ -4,6 +4,8 @@ import ProtectedLayout from "@/router/ProtectedLayout";
 
 import MainPage from "@/pages/MainPage";
 import Login from "@/pages/Login";
+import SearchRecipe from "@/pages/SearchRecipe";
+import Recommend from "@/pages/Recommend"
 import Wishlist from "@/pages/Wishlist";
 import NotFound from "@/pages/NotFound";
 
@@ -14,6 +16,8 @@ function BrowserRoutes() {
 
       <Route element={<ProtectedLayout />}>
         <Route path="/" element={<MainPage />} />
+        <Route path="/searchrecipe" element={<SearchRecipe />} />
+        <Route path="/recommend" element={<Recommend />} />
         <Route path="/wishlist" element={<Wishlist />} />
       </Route>
 
