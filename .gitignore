@@ -48,7 +48,6 @@ prisma/dev.db-journal
 ecosystem.config.js
 
 # lockfile conflict 방지 (하나만 선택)
-# package-lock.json 은 보통 포함 (의존성 고정 목적)
 # yarn.lock
 # pnpm-lock.yaml
 
